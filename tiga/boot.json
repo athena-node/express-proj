@@ -1,0 +1,50 @@
+{
+    "apps": [
+        {
+            "name": "tiga",
+            "script": "./app.js",
+            "log_date_format": "YYYY-MM-DD HH:mm Z",
+            "error_file": "./logs/tiga-error.log",
+            "out_file": "./logs/tiga-out.log",
+            "pid_file": "./logs/pids/tiga.pid",
+            "instances": 10,
+            "min_uptime": "200s",
+            "max_restarts": 10,
+            "max_memory_restart": "1000M",
+            "cron_restart": "0 0 * * *",
+            "watch": [
+                "bin",
+                "apps"
+            ],
+            "ignore_watch": [
+                "node_modules",
+                "public"
+            ],
+            "merge_logs": true,
+            "exec_interpreter": "node",
+            "exec_mode": "cluster",
+            "autorestart": true,
+            "vizion": false,
+            "env": {
+                "NODE_ENV": "production",
+                "NODE_PORT": "1337"
+            },
+            "env_production": {
+                "NODE_ENV": "production",
+                "NODE_PORT": "1337"
+            },
+            "env_staging": {
+                "NODE_ENV": "staging",
+                "NODE_PORT": "1335"
+            },
+            "env_dev": {
+                "NODE_ENV": "testing",
+                "NODE_PORT": "1337"
+            },
+            "env_testing": {
+                "NODE_ENV": "testing",
+                "NODE_PORT": "1337"
+            }
+        }
+    ]
+}
