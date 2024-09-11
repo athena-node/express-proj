@@ -45,7 +45,7 @@ Example app listening on port 1337
 
 Here a simple express 5.0 runs successfully!
 
-Then, load http://localhost:3000/ in a browser to see the output.
+Then, load http://localhost:1337/ in a browser to see the output.
 # post request
 ```shell
 curl --location --request POST 'localhost:1337/foo'
